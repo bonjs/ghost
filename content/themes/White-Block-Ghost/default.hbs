@@ -58,6 +58,24 @@
 	<script src={{asset "js/bootstrap.min.js"}} data-no-instant></script>
 	<script src={{asset "/js/instantclick.min.js"}} data-no-instant></script>
 	<script data-no-instant>InstantClick.init();</script>
+	
+	<script>
+
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+</script>
+	
 	{{!-- Ghost outputs important scripts and data with this tag --}}
 	{{ghost_foot}}
 </body>
