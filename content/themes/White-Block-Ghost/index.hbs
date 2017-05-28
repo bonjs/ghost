@@ -1,0 +1,32 @@
+{{!< default}}
+
+<div class="col-md-9 index-post">
+	{{! The tag below includes the post loop - partials/loop.hbs }}
+	{{> "loop"}}
+	{{pagination}}
+</div>
+
+<div class="col-md-3">
+	<div class="index-sidebar sidebar-link">
+		<h4>最近发表</h4>
+		<hr>
+		<ul>
+			{{!-- 这里是友情链接的地盘   (Links) --}}
+			{{#foreach posts}}
+				<li><a href="{{url}}"><i class="iconfont "></i>{{title}}</a></li>
+			{{/foreach}}
+		</ul>
+	</div>
+	
+	<div class="index-sidebar sidebar-link">
+		<h4>Tags</h4>
+		<hr>
+		<ul>
+			{{#foreach posts}}
+				{{#foreach tags}}
+					<a href="{{url}}" title="{{name}}" class="btn alt small tag" data-id="{{id}}">{{name}}</a> 
+				{{/foreach}}
+			{{/foreach}}
+		</ul>
+	</div>
+</div>
